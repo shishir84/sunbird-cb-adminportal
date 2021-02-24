@@ -64,12 +64,12 @@ export class CreateMdoComponent implements OnInit {
   { isActive: false, isCompleted: false, name: 'Classification', step: 1 },
   { isActive: false, isCompleded: false, name: 'Intended for', step: 2 }]
   constructor(public dialog: MatDialog,
-              private snackBar: MatSnackBar,
-              private createMdoService: CreateMDOService,
-              private router: Router,
-              private directoryService: DirectoryService,
-              private valueSvc: ValueService,
-              private activatedRoute: ActivatedRoute) {
+    private snackBar: MatSnackBar,
+    private createMdoService: CreateMDOService,
+    private router: Router,
+    private directoryService: DirectoryService,
+    private valueSvc: ValueService,
+    private activatedRoute: ActivatedRoute) {
     {
 
       this.contentForm = new FormGroup({
@@ -116,6 +116,10 @@ export class CreateMdoComponent implements OnInit {
         }
       })
       if (this.isUpdate) {
+        this.hideMDOField = true
+        this.contentForm.controls.deptMdoSubTypeId.patchValue(1)
+      } else if (this.department === 'MDO') {
+        this.contentForm.controls.deptMdoSubTypeId.patchValue(1)
         this.hideMDOField = true
       }
     }
@@ -214,7 +218,7 @@ export class CreateMdoComponent implements OnInit {
             this.snackBar.open('Admin assigned Successfully')
             this.router.navigate(['/app/home/directory', { department: this.department }])
           }
-        },                                                                                                              (err: { error: any }) => {
+        }, (err: { error: any }) => {
           this.openSnackbar(err.error.errors[0].message)
         })
       })
@@ -256,7 +260,7 @@ export class CreateMdoComponent implements OnInit {
             this.submittedForm = false
             this.openSnackbar('Success')
           }
-        },                                                                                (err: { error: any }) => {
+        }, (err: { error: any }) => {
           this.openSnackbar(err.error.message)
         })
 
@@ -279,7 +283,7 @@ export class CreateMdoComponent implements OnInit {
             this.router.navigate(['/app/home/directory', { department: this.department }])
 
           }
-        },                                                                                               (err: { error: any }) => {
+        }, (err: { error: any }) => {
           this.openSnackbar(err.error.message)
         })
 
