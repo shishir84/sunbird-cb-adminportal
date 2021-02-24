@@ -49,6 +49,7 @@ export class CreateMdoComponent implements OnInit {
   isFromDirectory = false
   private bannerSubscription: any
   public screenSizeIsLtMedium = false
+  hideMDOField = false
 
   isLtMedium$ = this.valueSvc.isLtMedium$
   mode$ = this.isLtMedium$.pipe(map(isMedium => (isMedium ? 'over' : 'side')))
@@ -58,16 +59,17 @@ export class CreateMdoComponent implements OnInit {
 
   isUpdate = false
   isAddAdmin = false
+  mdoDepartmentID!: number
   workFlow = [{ isActive: true, isCompleted: false, name: 'Basic Details', step: 0 },
   { isActive: false, isCompleted: false, name: 'Classification', step: 1 },
   { isActive: false, isCompleded: false, name: 'Intended for', step: 2 }]
   constructor(public dialog: MatDialog,
-              private snackBar: MatSnackBar,
-              private createMdoService: CreateMDOService,
-              private router: Router,
-              private directoryService: DirectoryService,
-              private valueSvc: ValueService,
-              private activatedRoute: ActivatedRoute) {
+    private snackBar: MatSnackBar,
+    private createMdoService: CreateMDOService,
+    private router: Router,
+    private directoryService: DirectoryService,
+    private valueSvc: ValueService,
+    private activatedRoute: ActivatedRoute) {
     {
 
       this.contentForm = new FormGroup({
@@ -94,15 +96,29 @@ export class CreateMdoComponent implements OnInit {
         if (this.data !== undefined || this.data !== null) {
           this.isUpdate = true
           this.updateId = data.row.id
-          this.getMdoSubDepartment(this.updateId)
+          if (this.department === 'CBP') {
+            this.getMdoSubDepartment(this.updateId)
+          } else {
+            this.getCBPSubDepartment(this.updateId)
+          }
+
         }
         this.contentForm = new FormGroup({
+
           name: new FormControl(data.row.mdo),
           head: new FormControl(data.row.head),
           deptSubTypeId: new FormControl(data.row.typeid),
           deptMdoSubTypeId: new FormControl(),
         })
+        console.log(data.row.typeid)
+        if (this.isUpdate && this.department === 'CBP') {
+
+          this.contentForm.controls['deptMdoSubTypeId'].disable()
+        }
       })
+      if (this.isUpdate) {
+        this.hideMDOField = true
+      }
     }
   }
   getMdoSubDepartment(updateId: number) {
@@ -111,7 +127,22 @@ export class CreateMdoComponent implements OnInit {
         if (updateId === dept.id) {
           dept.deptTypeInfos.forEach((subId: any) => {
             if (subId.deptType === 'MDO') {
+              this.mdoDepartmentID = subId.id
+              this.contentForm.controls.deptMdoSubTypeId.patchValue(subId.id)
+            }
+          })
+        }
+      })
+    })
 
+  }
+  getCBPSubDepartment(updateId: number) {
+    this.directoryService.getAllDepartments().subscribe(res => {
+      res.forEach((dept: { id: number, deptTypeInfos: any }) => {
+        if (updateId === dept.id) {
+          dept.deptTypeInfos.forEach((subId: any) => {
+            if (subId.deptType === 'CBP') {
+              this.mdoDepartmentID = subId.id
               this.contentForm.controls.deptMdoSubTypeId.patchValue(subId.id)
             }
           })
@@ -145,7 +176,14 @@ export class CreateMdoComponent implements OnInit {
     })
   }
   getAllMDODepartmentsAPI() {
-    this.createMdoService.getAllSubDepartments('MDO').subscribe(res => {
+    let subdept
+
+    if (this.department === 'CBP') {
+      subdept = 'MDO'
+    } else {
+      subdept = 'CBP'
+    }
+    this.createMdoService.getAllSubDepartments(subdept).subscribe(res => {
       this.subMDODepartments = res
     })
   }
@@ -177,7 +215,7 @@ export class CreateMdoComponent implements OnInit {
             this.snackBar.open('Admin assigned Successfully')
             this.router.navigate(['/app/home/directory', { department: this.department }])
           }
-        },                                                                                                              (err: { error: any }) => {
+        }, (err: { error: any }) => {
           this.openSnackbar(err.error.errors[0].message)
         })
       })
@@ -208,8 +246,8 @@ export class CreateMdoComponent implements OnInit {
         const deptArr = []
         const subdepartment = this.getSubDepartmennt(this.contentForm.value.deptSubTypeId)
         deptArr.push(subdepartment)
-        if (this.department !== 'MDO') {
-          const subMDOdepartment = this.getMdoSubDepartmennt(this.contentForm.value.deptMdoSubTypeId)
+        const subMDOdepartment = this.getMdoSubDepartmennt(this.contentForm.value.deptMdoSubTypeId)
+        if (subMDOdepartment) {
           deptArr.push(subMDOdepartment)
         }
         this.createMdoService.createDepartment(this.contentForm.value, deptArr).subscribe(res => {
@@ -219,8 +257,8 @@ export class CreateMdoComponent implements OnInit {
             this.submittedForm = false
             this.openSnackbar('Success')
           }
-        },                                                                                (err: { error: any }) => {
-          this.openSnackbar(err.error.errors[0].message)
+        }, (err: { error: any }) => {
+          this.openSnackbar(err.error.message)
         })
 
       }
@@ -230,8 +268,8 @@ export class CreateMdoComponent implements OnInit {
         const deptArr = []
         const subdepartment = this.getSubDepartmennt(this.contentForm.value.deptSubTypeId)
         deptArr.push(subdepartment)
-        if (this.department !== 'MDO') {
-          const subMDOdepartment = this.getMdoSubDepartmennt(this.contentForm.value.deptMdoSubTypeId)
+        const subMDOdepartment = this.getMdoSubDepartmennt(this.mdoDepartmentID)
+        if (subMDOdepartment) {
           deptArr.push(subMDOdepartment)
         }
         this.createMdoService.updateDepartment(this.contentForm.value, this.updateId, deptArr).subscribe(res => {
@@ -242,8 +280,8 @@ export class CreateMdoComponent implements OnInit {
             this.router.navigate(['/app/home/directory', { department: this.department }])
 
           }
-        },                                                                                               (err: { error: any }) => {
-          this.openSnackbar(err.error.errors[0].message)
+        }, (err: { error: any }) => {
+          this.openSnackbar(err.error.message)
         })
 
       }

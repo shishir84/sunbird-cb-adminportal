@@ -64,9 +64,8 @@
                     </mat-form-field>
                   </div>
                 </div>
-                <div class="margin-top-s"
-                  *ngIf="(isUpdate && department!=='MDO') || (!isUpdate && department==='CBP') ">
-                  <label>
+                <div class="margin-top-s">
+                  <label *ngIf="!hideMDOField">
                     <div class="margin-top-s flex flex-middle">
                       <span [ngClass]="{ required: checkCondition('deptSubTypeId', 'required') }" i18n>Sub MDO
                         Department
@@ -74,12 +73,13 @@
                     </div>
                   </label>
                   <div class="margin-top-s">
-                    <mat-form-field appearance="outline" class="margin-top-xs"
+                    <mat-form-field appearance="outline" class="margin-top-xs" [hidden]="hideMDOField"
                       [ngClass]="{ 'mat-form-field-invalid': showError('mdoDepatmentType') }">
                       <mat-select formControlName="deptMdoSubTypeId" i18n-placeholder placeholder="--Select--"
                         [required]="checkCondition('subTitle', 'required') ? true : null">
-                        <mat-option *ngFor="let subDepartment of subMDODepartments" [value]="subDepartment.id" i18n>
-                          {{capitalizeFirstLetter(subDepartment.deptSubType)}}</mat-option>
+                        <mat-option *ngFor="let subMDODepartment of subMDODepartments" [value]="subMDODepartment.id"
+                          i18n>
+                          {{capitalizeFirstLetter(subMDODepartment.deptSubType)}}</mat-option>
                       </mat-select>
                       <mat-error *ngIf="showError('mdoDepatmentType')" i18n>MDO department type is mandatory
                       </mat-error>
@@ -88,22 +88,6 @@
 
                 </div>
               </div>
-              <!-- <div class="margin-top-s">
-          <span i18n>Thumbnail</span> <span class="ws-mat-default-text"> &nbsp; 256 X 150 (pixel)</span>
-          <div class="margin-top-s">
-            <div [ngClass]="{'cursor-pointer': true,
-                                  'thumbnail-logo': true}"
-              (click)="contentForm.controls.appIcon.value || true ? false : uploadThumbnail.click()">
-              <img class="image max-width" height="150" width="100%" [src]="" />
-            </div>
-            <div class="photo mat-elevation-z4 ws-mat-primary-background" (click)="uploadThumbnail.click()">
-              <mat-icon class="photo-icon text-white">photo_camera</mat-icon>
-              <input type="file" #uploadThumbnail
-                (change)="uploadAppIcon($event.target.files[0]); uploadThumbnail.value = null" style="display: none;"
-                [accept]="imageTypes.toString()" />
-            </div>
-          </div>
-        </div> -->
               <button *ngIf="!isUpdate" [disabled]="!contentForm.valid" mat-raised-button type="submit"
                 class="text-white ws-mat-primary-background text-white margin-right-m">
                 <b class="text-white" i18n>Create</b>
@@ -129,10 +113,6 @@
             {{department}}. Add Minimum
             one user
             as Admin</p>
-          <!-- <button mat-raised-button type="button" class="text-white ws-mat-primary-background text-white margin-right-m"
-      (click)="openPopup()">
-      <b class="text-white" i18n>Add User</b>
-    </button> -->
           <ws-widget-ui-user-table [tableData]="tabledata" [data]="data" [needAddAdmin]="true" [needCreateUser]="true"
             [inputDepartmentId]="departmentId">
           </ws-widget-ui-user-table>
