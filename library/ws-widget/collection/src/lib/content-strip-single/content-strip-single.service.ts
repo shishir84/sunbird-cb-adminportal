@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { getStringifiedQueryParams } from '@ws-widget/utils'
+import { getStringifiedQueryParams } from '@sunbird-cb/utils'
 import { NsContentStripSingle } from './content-strip-single.model'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContentStripSingleService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getContentStripResponseApi(
     request: NsContentStripSingle.IStripRequestApi,

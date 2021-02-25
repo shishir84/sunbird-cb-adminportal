@@ -9,12 +9,12 @@ import {
 } from '@angular/core'
 import { IWidgetsPlayerAmpData } from './player-amp.model'
 import { Subscription, interval, timer } from 'rxjs'
-import { EventService, WsEvents } from '@ws-widget/utils'
+import { EventService, WsEvents } from '@sunbird-cb/utils'
 import { DynamicAssetsLoaderService } from '../_services/dynamic-assets-loader.service'
 import { getAmpConfig, isIOS, LINKS } from './player-amp.utility'
 import { ROOT_WIDGET_CONFIG } from '../collection.config'
 import { first, filter } from 'rxjs/operators'
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
 
 @Component({
   selector: 'ws-widget-player-amp',
@@ -75,7 +75,7 @@ export class PlayerAmpComponent extends WidgetBaseComponent
           .pipe(
             filter(() => Boolean(amp)),
             first(),
-        )
+          )
           .toPromise()
       }
     }
@@ -120,8 +120,7 @@ export class PlayerAmpComponent extends WidgetBaseComponent
     ]
     if (isIOS()) {
       playerSource.unshift({
-        src: `${LINKS.ampProxy}?playbackUrl=${
-          this.data.tokens.manifest
+        src: `${LINKS.ampProxy}?playbackUrl=${this.data.tokens.manifest
           }(format=m3u8-aapl)&token=${encodeURIComponent(this.data.tokens.streamingToken)}`,
         type: 'application/vnd.apple.mpegurl',
         disableUrlRewriter: true,

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy, HostBinding, ViewChild, TemplateRef } from '@angular/core'
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
+
 import { NsNetworkStripNewMultiple } from './activity-strip-multiple.model'
 import { ActivityStripNewMultipleService } from './activity-strip-multiple.service'
 import { WidgetContentService } from '../_services/widget-content.service'
@@ -11,9 +11,10 @@ import {
   // EventService,
   // ConfigurationsService,
   UtilityService,
-} from '@ws-widget/utils'
+} from '@sunbird-cb/utils'
 import { Subscription } from 'rxjs'
 import { MatSnackBar } from '@angular/material'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
 // import { filter } from 'rxjs/operators'
 // import { SearchServService } from '@ws/app/src/lib/routes/search/services/search-serv.service'
 

@@ -1,21 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { NsTnc } from '../../../../../../../../../src/app/models/tnc.model'
 import { Subscription } from 'rxjs'
-import { NsWidgetResolver } from '../../../../../../../../../library/ws-widget/resolver/src/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
 import {
   NsError,
   ROOT_WIDGET_CONFIG,
 } from '../../../../../../../../../library/ws-widget/collection/src/public-api'
 import { ActivatedRoute, Router, Data } from '@angular/router'
 import { HttpClient } from '@angular/common/http'
-import {
-  LoggerService,
-  ConfigurationsService,
-  NsPage,
-} from '../../../../../../../../../library/ws-widget/utils/src/public-api'
 import { TncAppResolverService } from '../../../../../../../../../src/app/services/tnc-app-resolver.service'
 import { TncPublicResolverService } from '../../../../../../../../../src/app/services/tnc-public-resolver.service'
 import { Globals } from '../../globals'
+import { ConfigurationsService, LoggerService, NsPage } from '@sunbird-cb/utils'
 
 @Component({
   selector: 'ws-app-tnc',
@@ -49,7 +45,7 @@ export class TncComponent implements OnInit, OnDestroy {
     private tncProtectedSvc: TncAppResolverService,
     private tncPublicSvc: TncPublicResolverService,
     private globals: Globals,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.routeSubscription = this.activatedRoute.data.subscribe((response: Data) => {

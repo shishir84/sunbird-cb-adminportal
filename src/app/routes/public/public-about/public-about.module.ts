@@ -10,7 +10,7 @@ import {
   MatButtonModule,
 } from '@angular/material'
 import { BtnPageBackModule } from '@ws-widget/collection'
-import { HorizontalScrollerModule, PipeSafeSanitizerModule } from '@ws-widget/utils'
+import { HorizontalScrollerModule, PipeSafeSanitizerModule } from '@sunbird-cb/utils'
 
 @NgModule({
   declarations: [PublicAboutComponent],
@@ -30,4 +30,4 @@ import { HorizontalScrollerModule, PipeSafeSanitizerModule } from '@ws-widget/ut
 
   exports: [PublicAboutComponent],
 })
-export class PublicAboutModule {}
+export class PublicAboutModule { }

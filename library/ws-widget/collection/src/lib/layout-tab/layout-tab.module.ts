@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { LayoutTabComponent } from './layout-tab.component'
 import { MatTabsModule } from '@angular/material'
-import { WidgetResolverModule } from '@ws-widget/resolver'
+import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
 @NgModule({
   declarations: [LayoutTabComponent],
   imports: [CommonModule, MatTabsModule, WidgetResolverModule],
   entryComponents: [LayoutTabComponent],
 })
-export class LayoutTabModule {}
+export class LayoutTabModule { }

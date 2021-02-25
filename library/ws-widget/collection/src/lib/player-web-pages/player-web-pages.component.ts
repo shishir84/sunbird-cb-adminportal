@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
 
 @Component({
   selector: 'ws-widget-player-web-pages',
@@ -10,5 +10,5 @@ export class PlayerWebPagesComponent extends WidgetBaseComponent
   implements OnInit, NsWidgetResolver.IWidgetData<any> {
   @Input() widgetData!: any
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

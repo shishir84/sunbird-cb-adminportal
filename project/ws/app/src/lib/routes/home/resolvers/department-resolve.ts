@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router'
 import { EMPTY, Observable } from 'rxjs'
 import { map, catchError } from 'rxjs/operators'
-import { AuthKeycloakService, IResolveResponse } from '@ws-widget/utils'
+import { AuthKeycloakService, IResolveResponse } from '@sunbird-cb/utils'
 import { NSProfileDataV2 } from '../../home/models/profile-v2.model'
 import { ProfileV2Service } from '../services/home.servive'
 

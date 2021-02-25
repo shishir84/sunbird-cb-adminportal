@@ -1,10 +1,9 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { IWidgetBtnContentFeedbackV2 } from '@ws-widget/collection'
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
 import { BtnContentFeedbackDialogV2Component } from '../btn-content-feedback-dialog-v2/btn-content-feedback-dialog-v2.component'
-import { ConfigurationsService } from '../../../../../../utils/src/public-api'
-
+import { ConfigurationsService } from '@sunbird-cb/utils'
 @Component({
   selector: 'ws-widget-btn-content-feedback-v2',
   templateUrl: './btn-content-feedback-v2.component.html',

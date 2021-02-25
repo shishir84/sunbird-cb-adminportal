@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, OnChanges, Input } from '@angular/core'
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser'
 
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
 import { NsEmbeddedPage } from './embedded-page.model'
 
 @Component({
@@ -11,10 +11,10 @@ import { NsEmbeddedPage } from './embedded-page.model'
 })
 export class EmbeddedPageComponent extends WidgetBaseComponent
   implements
-    OnInit,
-    OnDestroy,
-    OnChanges,
-    NsWidgetResolver.IWidgetData<NsEmbeddedPage.IEmbeddedPage | null> {
+  OnInit,
+  OnDestroy,
+  OnChanges,
+  NsWidgetResolver.IWidgetData<NsEmbeddedPage.IEmbeddedPage | null> {
   @Input() widgetData: NsEmbeddedPage.IEmbeddedPage | null = null
 
   iframeSrc: SafeResourceUrl | null = null
@@ -34,5 +34,5 @@ export class EmbeddedPageComponent extends WidgetBaseComponent
     }
   }
 
-  ngOnDestroy() {}
+  ngOnDestroy() { }
 }

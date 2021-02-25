@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 
-import { ConfigurationsService } from '@ws-widget/utils'
+import { ConfigurationsService } from '@sunbird-cb/utils'
 
 import { IWidgetErrorFeatureDisabled } from './error-feature-disabled.model'
 
@@ -19,7 +19,7 @@ export class ErrorFeatureDisabledComponent implements OnInit, OnDestroy {
 
   private routeChangeSubs: Subscription | null = null
   private prefChangeSubs: Subscription | null = null
-  constructor(private route: ActivatedRoute, private configurationsSvc: ConfigurationsService) {}
+  constructor(private route: ActivatedRoute, private configurationsSvc: ConfigurationsService) { }
 
   ngOnInit() {
     if (!this.errorData) {

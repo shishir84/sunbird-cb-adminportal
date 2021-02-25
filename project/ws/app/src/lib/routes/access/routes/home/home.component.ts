@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core'
 import { Router, Event, NavigationEnd, NavigationError, ActivatedRoute } from '@angular/router'
 import { ILeftMenu } from '@ws-widget/collection'
 import { NsWidgetResolver } from 'library/ws-widget/resolver/src/public-api'
-import { ValueService } from '@ws-widget/utils/src/public-api'
+import { ValueService } from '@sunbird-cb/utils'
 import { map } from 'rxjs/operators'
 
 @Component({

@@ -8,8 +8,8 @@ import { LoaderService } from '../../services/loader.service'
 import { AuthInitService } from '../../services/init.service'
 import { ActivatedRoute, Router } from '@angular/router'
 import { CreateMDOService } from './create-mdo.services'
-import { ValueService } from '../../../../../../../../../library/ws-widget/utils/src/lib/services/value.service'
-import { NsWidgetResolver } from '../../../../../../../../../library/ws-widget/resolver/src/public-api'
+import { ValueService } from '@sunbird-cb/utils'
+import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
 import { ILeftMenu } from '../../../../../../../../../library/ws-widget/collection/src/public-api'
 import { map } from 'rxjs/operators'
 interface IUser { userId: string, fullName: string; email: string; role: string }
@@ -17,7 +17,7 @@ interface IUser { userId: string, fullName: string; email: string; role: string 
   selector: 'ws-app-create-mdo',
   providers: [AuthInitService, LoaderService],
   templateUrl: './create-mdo.component.html',
-  styleUrls: ['./create-mdo.component.scss'],
+  styleUrls: ['./create-mdo.component.scss']
 })
 export class CreateMdoComponent implements OnInit {
   @Input() isSubmitPressed = false

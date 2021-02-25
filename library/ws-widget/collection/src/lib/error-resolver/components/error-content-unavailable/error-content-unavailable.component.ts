@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 
-import { ConfigurationsService } from '@ws-widget/utils'
+import { ConfigurationsService } from '@sunbird-cb/utils'
 
 import { IWidgetErrorAccessForbidden } from '../error-access-forbidden/error-access-forbidden.model'
 @Component({
@@ -19,7 +19,7 @@ export class ErrorContentUnavailableComponent implements OnInit, OnDestroy {
   private prefChangeSubs: Subscription | null = null
   private routeChangeSubs: Subscription | null = null
 
-  constructor(private route: ActivatedRoute, private configurationsSvc: ConfigurationsService) {}
+  constructor(private route: ActivatedRoute, private configurationsSvc: ConfigurationsService) { }
   ngOnInit() {
     if (!this.errorData) {
       this.routeChangeSubs = this.route.data.subscribe(response => {

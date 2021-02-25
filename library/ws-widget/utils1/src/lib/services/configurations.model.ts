@@ -1,4 +1,4 @@
-import { NsWidgetResolver } from '@ws-widget/resolver'
+import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
 import { NsPage } from '../resolvers/page.model'
 export namespace NsInstanceConfig {
   export interface IConfig {

@@ -10,7 +10,7 @@ import {
   hasUnitPermission,
   NsWidgetResolver,
   WidgetResolverService,
-} from '@ws-widget/resolver'
+} from '@sunbird-cb/resolver/public-api'
 import {
   AuthKeycloakService,
   ConfigurationsService,
@@ -19,7 +19,7 @@ import {
   NsInstanceConfig,
   NsUser,
   UserPreferenceService,
-} from '@ws-widget/utils'
+} from '@sunbird-cb/utils'
 import { environment } from '../../environments/environment'
 import { Omit } from 'lodash'
 

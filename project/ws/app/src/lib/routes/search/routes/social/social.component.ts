@@ -11,8 +11,8 @@ import {
 } from '../../models/search.model'
 // import { IKhubFetchStatus } from '../../../infy/routes/knowledge-hub/models/knowledgeHub.model'
 import { NsContent, NsError, ROOT_WIDGET_CONFIG } from '@ws-widget/collection'
-import { ValueService } from '@ws-widget/utils'
-import { NsWidgetResolver } from '@ws-widget/resolver'
+import { ValueService } from '@sunbird-cb/utils'
+import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
 
 @Component({
   selector: 'ws-app-social',

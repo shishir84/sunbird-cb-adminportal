@@ -4,7 +4,7 @@ import {
   ConfigurationsService,
   NsInstanceConfig,
   UserPreferenceService,
-} from '../../../../../../../../../library/ws-widget/utils/src/public-api'
+} from '@sunbird-cb/utils'
 import { FormControl, Validators } from '@angular/forms'
 
 @Component({
@@ -17,7 +17,7 @@ export class LangSelectComponent implements OnInit {
     private configSvc: ConfigurationsService,
     private router: Router,
     private userPrefSvc: UserPreferenceService,
-  ) {}
+  ) { }
   userName = ''
   selectedLang = ''
   lang = ''

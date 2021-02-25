@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
-import { TFetchStatus } from '@ws-widget/utils'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { TFetchStatus } from '@sunbird-cb/utils'
 import { NsContent } from '../_services/widget-content.model'
 import { WidgetContentService } from '../_services/widget-content.service'
 import { NsContentStripSingle } from './content-strip-single.model'
@@ -65,7 +65,7 @@ export class ContentStripSingleComponent extends WidgetBaseComponent
         this.convertToStrip(results.contents || [])
         this.checkParentStatus('done', results.contents.length)
       },
-                                                                                             () => {
+        () => {
           this.checkParentStatus('error', 0)
         },
       )
@@ -82,7 +82,7 @@ export class ContentStripSingleComponent extends WidgetBaseComponent
         this.convertToStrip(results.result || [])
         this.checkParentStatus('done', results.result.length)
       },
-                                                                       () => {
+        () => {
           this.checkParentStatus('error', 0)
         },
       )
@@ -101,7 +101,7 @@ export class ContentStripSingleComponent extends WidgetBaseComponent
           this.convertToStrip(results.contents || [])
           this.checkParentStatus('done', results.contents.length)
         },
-                   () => {
+          () => {
             this.checkParentStatus('error', 0)
           },
         )
@@ -118,7 +118,7 @@ export class ContentStripSingleComponent extends WidgetBaseComponent
         this.convertToStrip(results.result || [])
         this.checkParentStatus('done', results.result.length)
       },
-                                                                           () => {
+        () => {
           this.checkParentStatus('error', 0)
         },
       )
@@ -135,7 +135,7 @@ export class ContentStripSingleComponent extends WidgetBaseComponent
         this.convertToStrip(results || [])
         this.checkParentStatus('done', results.length)
       },
-                                                                                  () => {
+        () => {
           this.checkParentStatus('error', 0)
         },
       )

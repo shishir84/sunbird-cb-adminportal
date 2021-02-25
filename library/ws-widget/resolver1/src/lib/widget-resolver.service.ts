@@ -10,7 +10,7 @@ import {
   WIDGET_RESOLVER_GLOBAL_CONFIG,
   WIDGET_RESOLVER_SCOPED_CONFIG,
 } from './widget-resolver.constant'
-// import { LoggerService } from '@ws-widget/utils'
+// import { LoggerService } from '@sunbird-cb/utils'
 import { NsWidgetResolver } from './widget-resolver.model'
 import { hasPermissions } from './widget-resolver.permissions'
 import { RestrictedComponent } from './restricted/restricted.component'
@@ -39,7 +39,7 @@ export class WidgetResolverService {
   private availableRegisteredWidgets: Map<
     string,
     NsWidgetResolver.IRegistrationConfig
-    > | null = null
+  > | null = null
   private restrictedWidgetKeys: Set<string> | null = null
   static getWidgetKey(config: NsWidgetResolver.IBaseConfig) {
     return `widget:${config.widgetType}::${config.widgetSubType}`

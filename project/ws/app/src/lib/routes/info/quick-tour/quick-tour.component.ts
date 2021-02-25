@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
+import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
 import { IWidgetsPlayerMediaData } from '@ws-widget/collection'
-import { NsWidgetResolver } from '@ws-widget/resolver'
-import { ConfigurationsService } from '@ws-widget/utils'
+import { ConfigurationsService } from '@sunbird-cb/utils'
 
 @Component({
   selector: 'ws-app-quick-tour',
@@ -14,15 +14,15 @@ export class QuickTourComponent implements OnInit {
   widgetResolverData: NsWidgetResolver.IRenderConfigWithTypedData<
     IWidgetsPlayerMediaData
   > = {
-    widgetData: {
-      url: '',
-      autoplay: true,
-      identifier: '',
-    },
-    widgetHostClass: 'video-full block vertical-height-without-nav',
-    widgetSubType: 'playerVideo',
-    widgetType: 'player',
-  }
+      widgetData: {
+        url: '',
+        autoplay: true,
+        identifier: '',
+      },
+      widgetHostClass: 'video-full block vertical-height-without-nav',
+      widgetSubType: 'playerVideo',
+      widgetType: 'player',
+    }
 
   constructor(private configSvc: ConfigurationsService) { }
 

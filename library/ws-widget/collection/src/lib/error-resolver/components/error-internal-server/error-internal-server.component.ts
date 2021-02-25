@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 
-import { ConfigurationsService } from '@ws-widget/utils'
+import { ConfigurationsService } from '@sunbird-cb/utils'
 
 import { IWidgetErrorInternalServer } from './error-internal-server.model'
 @Component({
@@ -18,7 +18,7 @@ export class ErrorInternalServerComponent implements OnInit, OnDestroy {
 
   private prefChangeSubs: Subscription | null = null
   private routeChangeSubs: Subscription | null = null
-  constructor(private route: ActivatedRoute, private configurationsSvc: ConfigurationsService) {}
+  constructor(private route: ActivatedRoute, private configurationsSvc: ConfigurationsService) { }
   ngOnInit() {
     if (!this.errorData) {
       this.routeChangeSubs = this.route.data.subscribe(response => {

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core'
 import { ActivatedRoute, ParamMap } from '@angular/router'
 import { map } from 'rxjs/operators'
 import { Subscription } from 'rxjs'
-import { ValueService, ConfigurationsService, EFeatures, NsPage } from '@ws-widget/utils'
+import { ValueService, ConfigurationsService, EFeatures, NsPage } from '@sunbird-cb/utils'
 
 @Component({
   selector: 'ws-public-faq',
@@ -34,7 +34,7 @@ export class PublicFaqComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private valueSvc: ValueService,
     private configSvc: ConfigurationsService,
-  ) {}
+  ) { }
   ngOnInit() {
     if (this.configSvc.restrictedFeatures) {
       this.isFaqFeature = !this.configSvc.restrictedFeatures.has(EFeatures.FAQ)

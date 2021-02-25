@@ -3,8 +3,8 @@ import { FormControl } from '@angular/forms'
 import { Subscription } from 'rxjs'
 import { Router, ActivatedRoute } from '@angular/router'
 import { startWith, debounceTime, distinctUntilChanged } from 'rxjs/operators'
-import { NsAppsConfig, ConfigurationsService, NsPage, LogoutComponent, SubapplicationRespondService, ValueService } from '@ws-widget/utils'
-import { NsWidgetResolver } from '@ws-widget/resolver'
+import { NsAppsConfig, ConfigurationsService, NsPage, LogoutComponent, SubapplicationRespondService, ValueService } from '@sunbird-cb/utils'
+import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
 import { ROOT_WIDGET_CONFIG, CustomTourService } from '@ws-widget/collection'
 import { MatDialog } from '@angular/material'
 // import { AccessControlService } from '../../../../project/ws/author/src/public-api'
@@ -57,19 +57,19 @@ export class FeaturesComponent implements OnInit, OnDestroy {
             ...group,
             featureWidgets: group.featureIds.map(
               (id: string): NsWidgetResolver.IRenderConfigWithTypedData<NsPage.INavLink> =>
-                ({
-                  widgetType: ROOT_WIDGET_CONFIG.actionButton._type,
-                  widgetSubType: ROOT_WIDGET_CONFIG.actionButton.feature,
-                  widgetHostClass: 'my-2 px-2 w-1/2 sm:w-1/3 md:w-1/6 w-lg-1-8 box-sizing-box',
-                  widgetData: {
-                    config: {
-                      type: 'feature-item',
-                      useShortName: false,
-                      treatAsCard: true,
-                    },
-                    actionBtn: appsConfig.features[id],
+              ({
+                widgetType: ROOT_WIDGET_CONFIG.actionButton._type,
+                widgetSubType: ROOT_WIDGET_CONFIG.actionButton.feature,
+                widgetHostClass: 'my-2 px-2 w-1/2 sm:w-1/3 md:w-1/6 w-lg-1-8 box-sizing-box',
+                widgetData: {
+                  config: {
+                    type: 'feature-item',
+                    useShortName: false,
+                    treatAsCard: true,
                   },
-                }),
+                  actionBtn: appsConfig.features[id],
+                },
+              }),
             ),
           }),
       )

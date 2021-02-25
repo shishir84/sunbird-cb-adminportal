@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { NsWidgetResolver } from '@ws-widget/resolver'
+import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
 import { WidgetBaseComponent } from '../widget-base.component'
 @Component({
   selector: 'ws-resolver-invalid-permission',
@@ -14,5 +14,5 @@ export class InvalidPermissionComponent extends WidgetBaseComponent
   @Input() widgetData!: any
   showData = true
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

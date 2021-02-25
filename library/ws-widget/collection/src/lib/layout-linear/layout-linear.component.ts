@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
 
 interface ILinearWidgets {
   widgets: NsWidgetResolver.IRenderConfigWithAnyData[]
@@ -13,5 +13,5 @@ export class LayoutLinearComponent extends WidgetBaseComponent
   implements OnInit, NsWidgetResolver.IWidgetData<ILinearWidgets> {
   @Input() widgetData!: ILinearWidgets
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

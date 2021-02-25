@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
-import { ConfigurationsService, NsPage } from '@ws-widget/utils'
+import { ConfigurationsService, NsPage } from '@sunbird-cb/utils'
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 import { ISearchAutoComplete, ISearchQuery, ISuggestedFilters } from '../../models/search.model'
 import { SearchServService } from '../../services/search-serv.service'
@@ -130,7 +130,7 @@ export class HomeComponent implements OnInit {
       this.languageSearch = this.languageSearch.sort()
       this.swapRemove(this.languageSearch, this.languageSearch.indexOf('all'), 0)
       if (this.preferredLanguages && this.preferredLanguages.split(',').length > 1) {
-      this.languageSearch.splice(1, 0, this.preferredLanguages)
+        this.languageSearch.splice(1, 0, this.preferredLanguages)
       }
     })
     this.searchSvc.getSearchConfig().then(res => {

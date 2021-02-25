@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 
-import { ConfigurationsService } from '@ws-widget/utils'
+import { ConfigurationsService } from '@sunbird-cb/utils'
 
 import { IWidgetErrorNotFound } from './error-not-found.model'
 @Component({
@@ -18,7 +18,7 @@ export class ErrorNotFoundComponent implements OnInit, OnDestroy {
 
   private routeChangeSubs: Subscription | null = null
   private prefChangeSubs: Subscription | null = null
-  constructor(private route: ActivatedRoute, private configurationSvc: ConfigurationsService) {}
+  constructor(private route: ActivatedRoute, private configurationSvc: ConfigurationsService) { }
 
   ngOnInit() {
     if (!this.errorData) {

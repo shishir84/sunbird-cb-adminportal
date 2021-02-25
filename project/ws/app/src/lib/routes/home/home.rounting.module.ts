@@ -10,7 +10,7 @@ import { DirectoryViewComponent } from './routes/directory/directroy.component'
 import { CreateMdoComponent } from './routes/create-mdo/create-mdo.component'
 import { CreateUserComponent } from './routes/create-user/create-user.component'
 import { DepartmentResolve } from './resolvers/department-resolve'
-// import { PageResolve } from '@ws-widget/utils'
+// import { PageResolve } from '@sunbird-cb/utils'
 const routes: Routes = [
   {
     path: '',

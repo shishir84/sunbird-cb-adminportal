@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 
-import { ConfigurationsService } from '@ws-widget/utils'
+import { ConfigurationsService } from '@sunbird-cb/utils'
 
 import { IWidgetErrorServiceUnavailable } from './error-service-unavailable.model'
 
@@ -19,7 +19,7 @@ export class ErrorServiceUnavailableComponent implements OnInit, OnDestroy {
 
   private prefChangeSubs: Subscription | null = null
   private routeChangeSubs: Subscription | null = null
-  constructor(private route: ActivatedRoute, private configurationSvc: ConfigurationsService) {}
+  constructor(private route: ActivatedRoute, private configurationSvc: ConfigurationsService) { }
 
   ngOnInit() {
     if (!this.errorData) {

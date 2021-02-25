@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { GalleryViewComponent } from './gallery-view.component'
-import { WidgetResolverModule } from '@ws-widget/resolver'
-import { HorizontalScrollerModule } from '../../../../utils/src/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
 import { MatIconModule, MatCardModule } from '@angular/material'
+import { HorizontalScrollerModule } from '@sunbird-cb/utils'
 
 @NgModule({
   declarations: [GalleryViewComponent],

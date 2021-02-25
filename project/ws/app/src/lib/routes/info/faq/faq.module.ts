@@ -12,7 +12,7 @@ import {
 } from '@angular/material'
 import { RouterModule } from '@angular/router'
 import { BtnPageBackModule } from '@ws-widget/collection'
-import { PipeSafeSanitizerModule } from '../../../../../../../../library/ws-widget/utils/src/public-api'
+import { PipeSafeSanitizerModule } from '@sunbird-cb/utils'
 
 @NgModule({
   declarations: [FaqHomeComponent],
@@ -31,4 +31,4 @@ import { PipeSafeSanitizerModule } from '../../../../../../../../library/ws-widg
   ],
   exports: [FaqHomeComponent],
 })
-export class FaqModule {}
+export class FaqModule { }

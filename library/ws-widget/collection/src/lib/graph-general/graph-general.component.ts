@@ -9,7 +9,7 @@ import {
   ViewChild,
 } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { NsWidgetResolver, WidgetBaseComponent } from '@ws-widget/resolver'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
 import { Chart, ChartOptions } from 'chart.js'
 import { IWidgetGraphData, TChartJsGraphType, TChartJsColorPalette } from './graph-general.model'
 import { COLOR_PALETTE, GRAPH_TYPES, colorPalettes } from './graph-general-color-palette'
@@ -21,11 +21,11 @@ import { GraphGeneralService } from './graph-general.service'
 })
 export class GraphGeneralComponent extends WidgetBaseComponent
   implements
-    OnInit,
-    OnDestroy,
-    AfterViewInit,
-    OnChanges,
-    NsWidgetResolver.IWidgetData<IWidgetGraphData> {
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+  OnChanges,
+  NsWidgetResolver.IWidgetData<IWidgetGraphData> {
   @Input() widgetData!: IWidgetGraphData
   @ViewChild('chartContainer', { static: true }) chartContainer!: ElementRef<HTMLDivElement>
   generalChart: Chart | null = null
@@ -110,9 +110,9 @@ export class GraphGeneralComponent extends WidgetBaseComponent
                 display: widgetData.graphGridLinesDisplay,
               },
               scaleLabel: {
-              display: widgetData.graphIsXAxisLabel,
-              labelString: widgetData.graphXAxisLabel,
-            },
+                display: widgetData.graphIsXAxisLabel,
+                labelString: widgetData.graphXAxisLabel,
+              },
               stacked: true,
             },
           ],

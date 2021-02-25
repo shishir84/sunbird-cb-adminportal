@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
-import { ConfigurationsService, getStringifiedQueryParams } from '../../../../../utils/src/public-api'
+import { ConfigurationsService, getStringifiedQueryParams } from '@sunbird-cb/utils'
 import { NsAutoComplete } from './user-autocomplete.model'
 
 // TODO: move this in some common place
@@ -56,7 +56,7 @@ export class UserAutocompleteService {
     url += stringifiedQueryParams ? `?${stringifiedQueryParams}` : ''
 
     return this.http.post<NsAutoComplete.IUserAutoComplete[]>(
-      url ,
+      url,
       { departments }
     )
   }
