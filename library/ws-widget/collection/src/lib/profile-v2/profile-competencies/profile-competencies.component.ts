@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 
 @Component({
   selector: 'ws-widget-profile-v2-competencies',

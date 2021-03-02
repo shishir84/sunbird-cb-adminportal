@@ -34,7 +34,7 @@ import {
   BtnKbAnalyticsModule,
   UserAutocompleteModule,
 } from '@ws-widget/collection'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 import {
   DefaultThumbnailModule,
   HorizontalScrollerModule, PipeDurationTransformModule, PipeLimitToModule, PipePartialContentModule,

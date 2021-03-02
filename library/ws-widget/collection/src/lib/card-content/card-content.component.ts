@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, HostBinding, Input, OnDestroy, OnInit } from '@angular/core'
 import { MatSnackBar } from '@angular/material'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 import { ConfigurationsService, EventService, UtilityService, NsInstanceConfig } from '@sunbird-cb/utils'
 import { Subscription } from 'rxjs'
 // import { NsGoal } from '../btn-goals/btn-goals.model'

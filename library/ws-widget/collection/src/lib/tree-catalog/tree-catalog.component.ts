@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 import { TreeCatalogService } from './tree-catalog.service'
 import { IWsTree } from '@ws-widget/collection'
 import { NSCatalog } from './tree-catalog.model'

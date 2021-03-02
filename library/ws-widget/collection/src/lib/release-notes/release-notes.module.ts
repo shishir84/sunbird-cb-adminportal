@@ -12,7 +12,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material'
-import { BtnPageBackModule } from '../../lib/btn-page-back/btn-page-back.module'
+import { BtnPageBackModule } from '../btn-page-back/btn-page-back.module'
 import { ReleaseNotesComponent } from './release-notes.component'
 
 @NgModule({

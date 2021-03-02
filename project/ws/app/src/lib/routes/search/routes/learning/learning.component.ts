@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 import { NsContent, NsError, NSSearch, ROOT_WIDGET_CONFIG } from '@ws-widget/collection'
 import { ConfigurationsService, ValueService, UtilityService } from '@sunbird-cb/utils'
 import { Subscription } from 'rxjs'

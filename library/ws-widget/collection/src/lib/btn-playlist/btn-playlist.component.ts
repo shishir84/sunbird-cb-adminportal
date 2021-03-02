@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core'
 import { MatDialog } from '@angular/material'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 import { TFetchStatus, ConfigurationsService } from '@sunbird-cb/utils'
 import { NsContent } from '../_services/widget-content.model'
 import { BtnPlaylistDialogComponent } from './btn-playlist-dialog/btn-playlist-dialog.component'

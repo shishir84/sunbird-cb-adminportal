@@ -1,5 +1,5 @@
 import { ThemePalette } from '@angular/material'
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 import { NsAppsConfig } from '../services/configurations.model'
 
 export namespace NsPage {

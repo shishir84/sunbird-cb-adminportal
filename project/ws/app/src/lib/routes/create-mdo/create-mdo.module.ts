@@ -13,7 +13,7 @@ import {
 } from '@angular/material'
 import { MatCardModule } from '@angular/material/card'
 import { RolesAccessComponent } from '../access/routes/roles-access/roles-access.component'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 
 @NgModule({
   declarations: [HomeComponent, UsersComponent, RolesAccessComponent],

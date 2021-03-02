@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 import { IWidgetsPlayerMediaData } from '@ws-widget/collection'
 import { ConfigurationsService } from '@sunbird-cb/utils'
 

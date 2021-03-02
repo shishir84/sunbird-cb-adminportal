@@ -14,7 +14,7 @@ import { DynamicAssetsLoaderService } from '../_services/dynamic-assets-loader.s
 import { getAmpConfig, isIOS, LINKS } from './player-amp.utility'
 import { ROOT_WIDGET_CONFIG } from '../collection.config'
 import { first, filter } from 'rxjs/operators'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 
 @Component({
   selector: 'ws-widget-player-amp',

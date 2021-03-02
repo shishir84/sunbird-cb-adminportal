@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators'
 /* tslint:disable */
 import _ from 'lodash'
 import { ILeftMenu } from '@ws-widget/collection'
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 /* tslint:enable */
 
 @Component({

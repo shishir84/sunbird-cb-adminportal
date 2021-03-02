@@ -4,7 +4,7 @@ import { PipeFilterModule, PipeHtmlTagRemovalModule, PipeOrderByModule, PipeRela
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatDividerModule } from '@angular/material/divider'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 import {
   MatIconModule,
   MatListModule,

@@ -1,4 +1,4 @@
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 export interface IIntranetSelector {
   url?: string
   isIntranet?: IIntranetSelectorUnit

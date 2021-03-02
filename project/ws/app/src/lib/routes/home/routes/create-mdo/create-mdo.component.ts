@@ -9,7 +9,7 @@ import { AuthInitService } from '../../services/init.service'
 import { ActivatedRoute, Router } from '@angular/router'
 import { CreateMDOService } from './create-mdo.services'
 import { ValueService } from '@sunbird-cb/utils'
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 import { ILeftMenu } from '../../../../../../../../../library/ws-widget/collection/src/public-api'
 import { map } from 'rxjs/operators'
 interface IUser { userId: string, fullName: string; email: string; role: string }

@@ -14,7 +14,7 @@ import {
 } from '@sunbird-cb/utils'
 import { Subscription } from 'rxjs'
 import { MatSnackBar } from '@angular/material'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 // import { filter } from 'rxjs/operators'
 // import { SearchServService } from '@ws/app/src/lib/routes/search/services/search-serv.service'
 

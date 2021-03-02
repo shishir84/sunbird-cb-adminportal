@@ -12,7 +12,7 @@ import {
 // import { IKhubFetchStatus } from '../../../infy/routes/knowledge-hub/models/knowledgeHub.model'
 import { NsContent, NsError, ROOT_WIDGET_CONFIG } from '@ws-widget/collection'
 import { ValueService } from '@sunbird-cb/utils'
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 
 @Component({
   selector: 'ws-app-social',

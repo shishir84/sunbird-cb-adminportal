@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { NsContent } from '../_services/widget-content.model'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 
 interface IButtonChannelAnalytics {
   identifier: string

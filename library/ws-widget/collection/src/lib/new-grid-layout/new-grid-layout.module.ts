@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { NewGridLayoutComponent } from './new-grid-layout.component'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 
 @NgModule({
   declarations: [NewGridLayoutComponent],

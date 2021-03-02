@@ -11,7 +11,7 @@ import {
   MatChipsModule,
   MatCardModule,
 } from '@angular/material'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 
 @NgModule({
   declarations: [ContentStripMultipleComponent],

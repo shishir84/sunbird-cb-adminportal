@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { ContentStripVerticalComponent } from './content-strip-vertical.component'
 import { HorizontalScrollerModule } from '@sunbird-cb/utils'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 import {
   MatButtonModule,
   MatIconModule,

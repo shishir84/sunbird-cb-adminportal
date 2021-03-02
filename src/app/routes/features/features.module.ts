@@ -14,7 +14,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { BtnFeatureModule, BtnPageBackModule } from '@ws-widget/collection'
 import { LogoutModule } from '@sunbird-cb/utils'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 // import { AccessControlService } from '../../../../project/ws/author/src/public-api'
 
 @NgModule({

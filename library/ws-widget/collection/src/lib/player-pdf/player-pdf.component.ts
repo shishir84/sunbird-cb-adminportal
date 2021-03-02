@@ -10,7 +10,7 @@ import {
 } from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 import { EventService, LoggerService, WsEvents, ValueService } from '@sunbird-cb/utils'
 import * as PDFJS from 'pdfjs-dist/webpack'
 import { fromEvent, interval, merge, Subject, Subscription } from 'rxjs'

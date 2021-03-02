@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { NetworkStripMultipleComponent } from './network-strip-multiple.component'
 import { HorizontalScrollerModule } from '@sunbird-cb/utils'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 import {
   MatButtonModule,
   MatIconModule,

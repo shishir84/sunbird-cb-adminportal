@@ -10,7 +10,7 @@ import {
   hasUnitPermission,
   NsWidgetResolver,
   WidgetResolverService,
-} from '@sunbird-cb/resolver/public-api'
+} from '@sunbird-cb/resolver'
 import {
   AuthKeycloakService,
   ConfigurationsService,

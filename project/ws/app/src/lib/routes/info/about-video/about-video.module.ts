@@ -4,7 +4,7 @@ import { AboutVideoComponent } from './about-video.component'
 import { MatRadioModule, MatButtonModule, MatToolbarModule } from '@angular/material'
 import { LocaleTranslatorModule, BtnPageBackModule } from '@ws-widget/collection'
 import { RouterModule } from '@angular/router'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 
 @NgModule({
   declarations: [AboutVideoComponent],

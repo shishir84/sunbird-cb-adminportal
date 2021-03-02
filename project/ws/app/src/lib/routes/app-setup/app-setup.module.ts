@@ -37,7 +37,7 @@ import { TncAppResolverService } from '../../../../../../../src/app/services/tnc
 import { SetupDoneComponent } from './components/setup-done/setup-done.component'
 import { InterestModules } from './module/interest/interest.module'
 import { Globals } from './globals'
-import { WidgetResolverModule } from '@sunbird-cb/resolver/public-api'
+import { WidgetResolverModule } from '@sunbird-cb/resolver'
 // import { InterestModule } from '../profile/routes/interest/interest.module'
 
 @NgModule({

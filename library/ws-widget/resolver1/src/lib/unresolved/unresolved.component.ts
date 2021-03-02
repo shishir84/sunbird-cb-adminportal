@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { NsWidgetResolver } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver } from '@sunbird-cb/resolver'
 import { WidgetBaseComponent } from '../widget-base.component'
 @Component({
   selector: 'ws-resolver-unresolved',

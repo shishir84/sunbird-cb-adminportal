@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core'
 import { switchMap, map, catchError } from 'rxjs/operators'
 import { of, Observable } from 'rxjs'
 import { MatDialog, MatSnackBar } from '@angular/material'
-import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver/public-api'
+import { NsWidgetResolver, WidgetBaseComponent } from '@sunbird-cb/resolver'
 import { ConfigurationsService, EventService } from '@sunbird-cb/utils'
 import { NsContent } from '../_services/widget-content.model'
 import {
