@@ -5,7 +5,7 @@ import { ValueService } from '@sunbird-cb/utils'
 import { map } from 'rxjs/operators'
 /* tslint:disable */
 import _ from 'lodash'
-import { ILeftMenu } from '@ws-widget/collection'
+import { ILeftMenu } from '@sunbird-cb/collection'
 import { NsWidgetResolver } from '@sunbird-cb/resolver'
 /* tslint:enable */
 
@@ -61,6 +61,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           _.set(leftData, 'widgetData.name', _.get(this.activeRoute, 'snapshot.data.department.data.description'))
           _.set(leftData, 'widgetData.userRoles', this.myRoles)
           this.widgetData = leftData
+          console.log(this.widgetData)
         } else {
           this.widgetData = this.activeRoute.snapshot.data.pageData.data.menus
         }

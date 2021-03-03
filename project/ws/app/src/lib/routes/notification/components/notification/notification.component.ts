@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { IUserNotification } from '../../models/notifications.model'
-import { NsPlaylist, BtnPlaylistService } from '@ws-widget/collection'
+import { NsPlaylist, BtnPlaylistService } from '@sunbird-cb/collection'
 import { TFetchStatus, NsPage, ConfigurationsService } from '@sunbird-cb/utils'
 
 @Component({

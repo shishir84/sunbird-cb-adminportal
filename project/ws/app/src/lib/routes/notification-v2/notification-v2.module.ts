@@ -8,7 +8,7 @@ import {
   MatIconModule,
 } from '@angular/material'
 
-import { BtnPageBackModule } from '@ws-widget/collection'
+import { BtnPageBackModule } from '@sunbird-cb/collection'
 
 import { NotificationV2RoutingModule } from './notification-v2-routing.module'
 import { HomeComponent } from './components/home/home.component'
@@ -30,4 +30,4 @@ import { NotificationEventComponent } from './components/notification-event/noti
   ],
   providers: [NotificationApiService, NotificationService],
 })
-export class NotificationV2Module {}
+export class NotificationV2Module { }

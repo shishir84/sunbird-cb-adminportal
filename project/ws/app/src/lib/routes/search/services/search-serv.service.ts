@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { NSSearch } from '@ws-widget/collection'
+import { NSSearch } from '@sunbird-cb/collection'
 import { ConfigurationsService, EventService, WsEvents } from '@sunbird-cb/utils'
 import { Observable, of } from 'rxjs'
 // import { KnowledgeHubApiService } from '../../infy/routes/knowledge-hub/apis/knowledge-hub-api.service'

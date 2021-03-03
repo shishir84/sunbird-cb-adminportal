@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { Router, Event, NavigationEnd, NavigationError, ActivatedRoute } from '@angular/router'
-import { ILeftMenu } from '@ws-widget/collection'
+import { ILeftMenu } from '@sunbird-cb/collection'
 import { NsWidgetResolver } from 'library/ws-widget/resolver/src/public-api'
 import { ValueService } from '@sunbird-cb/utils'
 import { map } from 'rxjs/operators'

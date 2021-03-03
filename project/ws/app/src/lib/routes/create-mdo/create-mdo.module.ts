@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { CreateMDORoutingModule } from './create-mdo-routing.module'
 import { HomeComponent } from './routes/home/home.component'
-import { BtnPageBackModule, LeftMenuModule, GroupCheckboxModule, UITableModule, ScrollspyLeftMenuModule } from '@ws-widget/collection'
+import { BtnPageBackModule, LeftMenuModule, GroupCheckboxModule, UIAdminTableModule, ScrollspyLeftMenuModule } from '@sunbird-cb/collection'
 import { HomeModule } from '../home/home.module'
 import { RouterModule } from '@angular/router'
 import { UsersComponent } from './routes/users/users.component'
@@ -18,7 +18,7 @@ import { WidgetResolverModule } from '@sunbird-cb/resolver'
 @NgModule({
   declarations: [HomeComponent, UsersComponent, RolesAccessComponent],
   imports: [CommonModule, CreateMDORoutingModule, BtnPageBackModule, LeftMenuModule, WidgetResolverModule,
-    MatSidenavModule, MatIconModule, GroupCheckboxModule, HomeModule, RouterModule, UITableModule, MatCardModule, ScrollspyLeftMenuModule],
+    MatSidenavModule, MatIconModule, GroupCheckboxModule, HomeModule, RouterModule, UIAdminTableModule, MatCardModule, ScrollspyLeftMenuModule],
   exports: [UsersComponent, RolesAccessComponent],
   providers: [UsersService],
 })

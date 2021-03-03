@@ -39,6 +39,7 @@
     "@angular/pwa": "^0.803.14",
     "@angular/router": "~8.2.1",
     "@angular/service-worker": "~8.2.1",
+    "@sunbird-cb/collection": "0.0.3",
     "@sunbird-cb/resolver": "0.0.1",
     "@sunbird-cb/utils": "0.0.4",
     "@types/file-saver": "^2.0.1",
@@ -73,7 +74,12 @@
     "typeface-roboto": "0.0.75",
     "vis-network": "^5.2.4",
     "xlsx": "^0.16.1",
-    "zone.js": "~0.10.1"
+    "zone.js": "~0.10.1",
+    "video.js": "7.6.0",
+    "videojs-contrib-quality-levels": "^2.0.9",
+    "videojs-hls-quality-selector": "^1.0.5",
+    "videojs-vr": "1.5.0",
+    "videojs-youtube": "^2.6.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.23",
@@ -91,6 +97,7 @@
     "@types/quill": "^2.0.2",
     "@types/vis": "^4.21.19",
     "@types/zip.js": "2.0.28",
+    "@types/video.js": "7.2.12",
     "angular-cli-alias": "^1.0.9",
     "codelyzer": "^5.1.0",
     "gzipper": "^2.8.1",

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser'
 import { MatDialog } from '@angular/material'
-import { AppTourDialogComponent } from '../../../../../../../../../library/ws-widget/collection/src/public-api'
+import { AppTourDialogComponent } from '@sunbird-cb/collection'
 import { Router, ActivatedRoute } from '@angular/router'
 import { Globals } from '../../globals'
 import { ConfigurationsService, NsPage } from '@sunbird-cb/utils'

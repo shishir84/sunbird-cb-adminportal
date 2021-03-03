@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { Router, Event, NavigationEnd, NavigationError, ActivatedRoute } from '@angular/router'
 import { NsWidgetResolver } from '@sunbird-cb/resolver'
-import { ILeftMenu } from '@ws-widget/collection'
+import { ILeftMenu } from '@sunbird-cb/collection'
 import { ValueService } from '@sunbird-cb/utils'
 import { map } from 'rxjs/operators'
 
@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.widgetData = this.activeRoute.snapshot.data &&
           this.activeRoute.snapshot.data.pageData.data.menus || []
       }
-
       if (event instanceof NavigationError) {
 
       }
