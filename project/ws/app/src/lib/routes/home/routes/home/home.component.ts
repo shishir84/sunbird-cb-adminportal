@@ -61,7 +61,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           _.set(leftData, 'widgetData.name', _.get(this.activeRoute, 'snapshot.data.department.data.description'))
           _.set(leftData, 'widgetData.userRoles', this.myRoles)
           this.widgetData = leftData
-          console.log(this.widgetData)
         } else {
           this.widgetData = this.activeRoute.snapshot.data.pageData.data.menus
         }
