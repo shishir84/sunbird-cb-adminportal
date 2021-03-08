@@ -16,8 +16,9 @@
               First name
             </label>
             <mat-form-field appearance="outline" class="margin-top-xs">
-              <input id="fname" matInput #fname formControlName="fname" i18n-placeholder placeholder="Type here"
-                i18n-aria-label aria-label="First name input" class="form-input" autocomplete="off" />
+              <input id="fname" matInput #fname formControlName="fname" pattern="[a-zA-Z ']*" i18n-placeholder
+                placeholder="Type here" i18n-aria-label aria-label="First name input" class="form-input"
+                autocomplete="off" />
               <mat-error [hidden]="false" i18n="First name Error|Explains name is required" i18n-aria-label
                 aria-label="First name Error|Explains name is required "
                 *ngIf="createUserForm?.controls['fname']?.touched && createUserForm?.controls['fname'].errors?.required">
@@ -36,7 +37,8 @@
             </label>
             <mat-form-field appearance="outline" class="margin-top-xs">
               <input id="lname" matInput #lname formControlName="lname" i18n-placeholder placeholder="Type here"
-                i18n-aria-label aria-label="Last name input" class="form-input" autocomplete="off" />
+                i18n-aria-label aria-label="Last name input" class="form-input" pattern="[a-zA-Z ']*"
+                autocomplete="off" />
               <mat-error [hidden]="false" i18n="Last name Error|Explains name is required" i18n-aria-label
                 aria-label="Last name Error|Explains name is required "
                 *ngIf="createUserForm?.controls['lname']?.touched && createUserForm?.controls['lname'].errors?.required">
@@ -76,18 +78,21 @@
                   placeholder="Type here" formControlName="department" i18n-aria-label
                   aria-label="Department input filed" readonly>
               </mat-form-field>
-              <ng-multiselect-dropdown id="department" *ngIf="!receivedDept" [data]="departmentoptions" [settings]="dropdownSettings"
-                  (onSelect)="onItemSelect($event)" (onDeSelect)="onItemDeSelect()" formControlName="department">
+              <ng-multiselect-dropdown id="department" *ngIf="!receivedDept" [data]="departmentoptions"
+                [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="onItemDeSelect()"
+                formControlName="department">
               </ng-multiselect-dropdown>
             </div>
 
-            <div class="input-wrapper margin-top-s margin-bottom-m" *ngIf="receivedDept || createUserForm.value.department">
+            <div class="input-wrapper margin-top-s margin-bottom-m"
+              *ngIf="receivedDept || createUserForm.value.department">
               <label for="roles" class="margin-remove-bottom form-label required" i18n-aria-label
                 aria-label="Roles label" i18n="Role label|Label which explains the user to select the roles">
                 Role
               </label>
               <mat-selection-list id="roles" formControlName="roles" #roles>
-                <mat-list-option *ngFor="let role of rolesList" (click)="modifyUserRoles(role)" [selected]="userRoles.has(role.roleName)" [value]="role.roleName">
+                <mat-list-option *ngFor="let role of rolesList" (click)="modifyUserRoles(role)"
+                  [selected]="userRoles.has(role.roleName)" [value]="role.roleName">
                   {{role.roleName}}
                 </mat-list-option>
               </mat-selection-list>
