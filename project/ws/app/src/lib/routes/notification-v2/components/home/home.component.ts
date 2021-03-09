@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.fetchActionNotifications()
     this.fetchInfoNotifications()
-    this.getCount()
   }
 
   fetchActionNotifications() {
@@ -84,18 +83,10 @@ export class HomeComponent implements OnInit {
         .updateNotificationSeenStatus(notification.notificationId, notification.classifiedAs)
         .subscribe(() => {
           notification.seen = true
-        },         noop)
+        }, noop)
     }
 
     this.notificationSvc.mapRoute(notification)
-  }
-
-  getCount() {
-    this.notificationApi.getCount().subscribe(count => {
-      if (count > 0) {
-        this.showMarkAsRead = true
-      }
-    })
   }
 
   readAllNotifications() {

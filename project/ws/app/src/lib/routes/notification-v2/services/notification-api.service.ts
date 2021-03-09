@@ -10,7 +10,6 @@ import {
 @Injectable()
 export class NotificationApiService {
   private readonly API_BASE = '/apis/protected/v8/user/notifications'
-  private readonly BADGE_COUNT = '/apis/protected/v8/user/iconBadge/unseenNotificationCount'
 
   constructor(private http: HttpClient) { }
 
@@ -33,10 +32,6 @@ export class NotificationApiService {
     }
 
     return this.http.get<INotificationData>(`${this.API_BASE}`, { params: queryParams })
-  }
-
-  getCount(): Observable<number> {
-    return this.http.get<number>(this.BADGE_COUNT)
   }
 
   updateNotificationSeenStatus(
