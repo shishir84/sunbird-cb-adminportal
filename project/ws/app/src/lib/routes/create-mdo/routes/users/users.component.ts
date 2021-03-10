@@ -83,6 +83,9 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   onSideNavTabClick(id: string) {
     this.currentTab = id
+    if (this.currentTab == 'users') {
+      this.getAllActiveUsersByDepartmentId(this.id)
+    }
     const el = document.getElementById(id)
     if (el != null) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
@@ -137,25 +140,19 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
     const rolesAndAccessData: any[] = []
     this.usersSvc.getUsersByDepartment(this.id).subscribe(res => {
       res.active_users.forEach(((user: any) => {
-        let hasRole
         user.roleInfo.forEach((role: { roleName: any }) => {
           if (role.roleName === data) {
-            hasRole = true
-          } else {
-            hasRole = false
+            const userRole: any[] = []
+            user.roleInfo.forEach((role: { roleName: any }) => {
+              userRole.push(role.roleName)
+            })
+            rolesAndAccessData.push({
+              fullName: `${user.firstName} ${user.lastName}`,
+              email: user.emailId,
+              position: userRole,
+            })
           }
         })
-        if (hasRole) {
-          const userRole: any[] = []
-          user.roleInfo.forEach((role: { roleName: any }) => {
-            userRole.push(role.roleName)
-          })
-          rolesAndAccessData.push({
-            fullName: `${user.firstName} ${user.lastName}`,
-            email: user.emailId,
-            position: userRole,
-          })
-        }
       }))
       this.data = rolesAndAccessData
     })
