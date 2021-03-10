@@ -1,6 +1,6 @@
 import { DirectoryService } from './../../../home/routes/directory/directory.services'
-import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
+import { AfterViewInit, Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
 // import { RolesAccessService } from '../../services/roles-access.service'
 @Component({
   selector: 'ws-app-roles-access',
@@ -12,8 +12,8 @@ export class RolesAccessComponent implements OnInit, AfterViewInit, OnDestroy {
   data: any = []
   deparmentId!: string
   deparmentName!: string
-
-  constructor(private directoryService: DirectoryService, private activatedRoute: ActivatedRoute, private router: Router
+  @Output() clickedDepartment = new EventEmitter<string>();
+  constructor(private directoryService: DirectoryService, private activatedRoute: ActivatedRoute,
   ) {
 
     this.activatedRoute.params.subscribe(params => {
@@ -42,8 +42,7 @@ export class RolesAccessComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /* Click event to navigate to a particular role */
   onRoleClick(clickedData: any) {
-    console.log(clickedData)
-    this.router.navigate([`/app/roles/39/users`])
+    this.clickedDepartment.emit(clickedData.role)
   }
 
   /* API call to get all roles*/

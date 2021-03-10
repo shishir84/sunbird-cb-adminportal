@@ -139,4 +139,45 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
       this.defaultSideNavBarOpenedSubscription.unsubscribe()
     }
   }
+  fClickedDepartment(data: any) {
+    this.currentTab = 'users'
+    // this.usersSvc.getUsersByDepartment(this.id).subscribe(res => {
+
+    //   this.data = res.active_users.map((user: any) => {
+    //     if (user.roleInfo.roleName === data) {
+    //       return {
+    //         fullName: `${user.firstName} ${user.lastName}`,
+    //         email: user.emailId,
+    //         position: user.roleInfo.descritpion,
+    //         role: user.roleInfo.roleName,
+    //       }
+    //     }
+    //   })
+    // })
+
+
+
+    const rolesAndAccessData: any[] = []
+    this.usersSvc.getUsersByDepartment(this.id).subscribe(res => {
+      res.active_users.forEach(((user: any) => {
+        let hasRole
+        user.roleInfo.forEach((role: { roleName: any }) => {
+          if (role.roleName === data) {
+            hasRole = true
+          } else {
+            hasRole = false
+          }
+        })
+        if (hasRole) {
+          rolesAndAccessData.push({
+            fullName: `${user.firstName} ${user.lastName}`,
+            email: user.emailId,
+            position: user.roleInfo.descritpion,
+            role: user.roleInfo.roleName,
+          })
+        }
+      }))
+      this.data = rolesAndAccessData
+    })
+  }
 }
