@@ -155,8 +155,6 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
     //   })
     // })
 
-
-
     const rolesAndAccessData: any[] = []
     this.usersSvc.getUsersByDepartment(this.id).subscribe(res => {
       res.active_users.forEach(((user: any) => {

@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
         .updateNotificationSeenStatus(notification.notificationId, notification.classifiedAs)
         .subscribe(() => {
           notification.seen = true
-        }, noop)
+        },         noop)
     }
 
     this.notificationSvc.mapRoute(notification)

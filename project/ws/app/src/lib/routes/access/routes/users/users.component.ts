@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
-import { Router, ActivatedRoute } from '@angular/router'
+import { Router } from '@angular/router'
 import { UsersService } from '../../services/users.service'
 @Component({
   selector: 'ws-app-users',
@@ -18,18 +18,12 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   private defaultSideNavBarOpenedSubscription: any
 
   constructor(private usersSvc: UsersService, private router: Router
-    , public dialog: MatDialog, private activatedRoute: ActivatedRoute) {
+    ,         public dialog: MatDialog) {
 
-    this.activatedRoute.params.subscribe(params => {
-      console.log(params['clickedRole'])
-
-    })
   }
   ngOnInit() {
     const url = this.router.url.split('/')
     this.role = url[url.length - 2]
-    console.log(this.role)
-
     this.fetchUsersWithRole()
     // int left blank
 

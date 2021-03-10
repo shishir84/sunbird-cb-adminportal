@@ -12,7 +12,7 @@ export class RolesAccessComponent implements OnInit, AfterViewInit, OnDestroy {
   data: any = []
   deparmentId!: string
   deparmentName!: string
-  @Output() clickedDepartment = new EventEmitter<string>();
+  @Output() clickedDepartment = new EventEmitter<string>()
   constructor(private directoryService: DirectoryService, private activatedRoute: ActivatedRoute,
   ) {
 
