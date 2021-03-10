@@ -228,7 +228,7 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
   getUserRole(user: any) {
-    let userRole: any[] = []
+    const userRole: any[] = []
     user.roleInfo.forEach((role: { roleName: any }) => {
       userRole.push(role.roleName)
     })

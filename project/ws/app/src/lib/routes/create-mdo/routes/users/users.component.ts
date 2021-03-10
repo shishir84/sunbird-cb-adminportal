@@ -93,7 +93,7 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   getAllActiveUsersByDepartmentId(id: string) {
     this.usersSvc.getUsersByDepartment(id).subscribe(res => {
       this.data = res.active_users.map((user: any) => {
-        let userRole: any[] = []
+        const userRole: any[] = []
         user.roleInfo.forEach((role: { roleName: any }) => {
           userRole.push(role.roleName)
         })
@@ -111,7 +111,7 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   getAllActiveUsers() {
     this.profile.getMyDepartment().subscribe(res => {
       this.data = res.active_users.map((user: any) => {
-        let userRole: any[] = []
+        const userRole: any[] = []
         user.roleInfo.forEach((role: { roleName: any }) => {
           userRole.push(role.roleName)
         })
@@ -146,7 +146,7 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
           }
         })
         if (hasRole) {
-          let userRole: any[] = []
+          const userRole: any[] = []
           user.roleInfo.forEach((role: { roleName: any }) => {
             userRole.push(role.roleName)
           })
