@@ -68,7 +68,7 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
       columns: [
         { displayName: 'Full name', key: 'fullName' },
         { displayName: 'Email', key: 'email' },
-        { displayName: 'Position', key: 'position' },
+        { displayName: 'Roles', key: 'position' },
       ],
       needCheckBox: false,
       needHash: false,
@@ -92,12 +92,15 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   /* API call to get all roles*/
   getAllActiveUsersByDepartmentId(id: string) {
     this.usersSvc.getUsersByDepartment(id).subscribe(res => {
-
       this.data = res.active_users.map((user: any) => {
+        let userRole: any[] = []
+        user.roleInfo.forEach((role: { roleName: any }) => {
+          userRole.push(role.roleName)
+        })
         return {
           fullName: `${user.firstName} ${user.lastName}`,
           email: user.emailId,
-          position: user.roleInfo.descritpion,
+          position: userRole,
           role: user.roleInfo.roleName,
         }
       })
@@ -106,27 +109,17 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   /* API call to get all roles*/
   getAllActiveUsers() {
-
     this.profile.getMyDepartment().subscribe(res => {
-
       this.data = res.active_users.map((user: any) => {
+        let userRole: any[] = []
+        user.roleInfo.forEach((role: { roleName: any }) => {
+          userRole.push(role.roleName)
+        })
         return {
           fullName: `${user.firstName} ${user.lastName}`,
           email: user.emailId,
-          position: user.roleInfo.descritpion,
+          position: userRole,
           role: user.roleInfo.roleName,
-        }
-      })
-    })
-  }
-  fetchUsersWithRole() {
-    this.usersSvc.getUsers(this.role).subscribe(res => {
-      this.data = res.users.map((user: any) => {
-        return {
-          fullName: `${user.first_name} ${user.last_name}`,
-          email: user.email,
-          position: user.department_name,
-          role: this.role,
         }
       })
     })
@@ -141,20 +134,6 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   fClickedDepartment(data: any) {
     this.currentTab = 'users'
-    // this.usersSvc.getUsersByDepartment(this.id).subscribe(res => {
-
-    //   this.data = res.active_users.map((user: any) => {
-    //     if (user.roleInfo.roleName === data) {
-    //       return {
-    //         fullName: `${user.firstName} ${user.lastName}`,
-    //         email: user.emailId,
-    //         position: user.roleInfo.descritpion,
-    //         role: user.roleInfo.roleName,
-    //       }
-    //     }
-    //   })
-    // })
-
     const rolesAndAccessData: any[] = []
     this.usersSvc.getUsersByDepartment(this.id).subscribe(res => {
       res.active_users.forEach(((user: any) => {
@@ -167,11 +146,14 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
           }
         })
         if (hasRole) {
+          let userRole: any[] = []
+          user.roleInfo.forEach((role: { roleName: any }) => {
+            userRole.push(role.roleName)
+          })
           rolesAndAccessData.push({
             fullName: `${user.firstName} ${user.lastName}`,
             email: user.emailId,
-            position: user.roleInfo.descritpion,
-            role: user.roleInfo.roleName,
+            position: userRole,
           })
         }
       }))

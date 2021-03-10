@@ -72,7 +72,7 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
       columns: [
         { displayName: 'Full Name', key: 'fullname' },
         { displayName: 'Email', key: 'email' },
-        { displayName: 'Position', key: 'position' },
+        { displayName: 'Roles', key: 'position' },
       ],
       needCheckBox: false,
       needHash: false,
@@ -172,7 +172,7 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
           activeUsersData.push({
             fullname: user ? `${user.firstName} ${user.lastName}` : null,
             email: user.emailId,
-            role: user.roleInfo,
+            position: this.getUserRole(user),
             userId: user.userId,
             active: user.active,
             blocked: user.blocked,
@@ -187,7 +187,7 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
           blockedUsersData.push({
             fullname: user ? `${user.firstName} ${user.lastName}` : null,
             email: user.emailId,
-            role: user.roleInfo,
+            position: this.getUserRole(user),
             userId: user.userId,
             active: user.active,
             blocked: user.blocked,
@@ -201,7 +201,7 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
           inactiveUsersData.push({
             fullname: user ? `${user.firstName} ${user.lastName}` : null,
             email: user.emailId,
-            role: user.roleInfo,
+            position: this.getUserRole(user),
             userId: user.userId,
             active: user.active,
             blocked: user.blocked,
@@ -209,7 +209,6 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
         }
       })
     }
-
     if (key) {
       this.currentFilter = key
       switch (key) {
@@ -227,5 +226,12 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
           break
       }
     }
+  }
+  getUserRole(user: any) {
+    let userRole: any[] = []
+    user.roleInfo.forEach((role: { roleName: any }) => {
+      userRole.push(role.roleName)
+    })
+    return userRole
   }
 }
