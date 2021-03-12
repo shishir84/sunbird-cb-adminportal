@@ -83,7 +83,7 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   onSideNavTabClick(id: string) {
     this.currentTab = id
-    if (this.currentTab == 'users') {
+    if (this.currentTab === 'users') {
       this.getAllActiveUsersByDepartmentId(this.id)
     }
     const el = document.getElementById(id)
@@ -143,8 +143,8 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
         user.roleInfo.forEach((role: { roleName: any }) => {
           if (role.roleName === data) {
             const userRole: any[] = []
-            user.roleInfo.forEach((role: { roleName: any }) => {
-              userRole.push(role.roleName)
+            user.roleInfo.forEach((r: { roleName: any }) => {
+              userRole.push(r.roleName)
             })
             rolesAndAccessData.push({
               fullName: `${user.firstName} ${user.lastName}`,
