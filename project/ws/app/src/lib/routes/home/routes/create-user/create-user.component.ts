@@ -119,6 +119,7 @@ export class CreateUserComponent implements OnInit {
           userName : form.value.fname,
           firstName: form.value.fname,
           lastName: form.value.lname,
+          channel: this.selectedDept ? this.selectedDept.deptName : this.departmentName,
       },
     }
 this.usersSvc.createUser(userreq).subscribe(userdata => {
