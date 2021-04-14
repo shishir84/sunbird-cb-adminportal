@@ -5,7 +5,9 @@
 .container-balanced {
   @extend %page-center;
 }
-
+.left-align{
+  margin-left: -270px;
+}
 .flex-align {
   align-items: center;
   justify-content: flex-start;
