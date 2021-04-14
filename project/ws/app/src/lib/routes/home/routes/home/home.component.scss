@@ -17,7 +17,9 @@
   @extend %page-center;
   height: auto;
 }
-
+.left-menu-bread{
+  margin-left: -400px;
+}
 .left-nav {
   min-width: 240px;
   max-width: 240px;

@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router'
 import { HomeRoutingModule } from './home.rounting.module'
 import { HomeComponent } from './routes/home/home.component'
 import { UsersViewComponent } from './routes/users-view/users-view.component'
-import { AvatarPhotoModule, BtnPageBackModule, LeftMenuModule, UIAdminTableModule, UserAutocompleteModule } from '@sunbird-cb/collection'
+import { AvatarPhotoModule, BtnPageBackModule, LeftMenuModule, UIAdminTableModule, UserAutocompleteModule, BreadcrumbsOrgModule } from '@sunbird-cb/collection'
 import { AboutComponent } from './routes/about/about.component'
 import { RolesAccessComponent } from './routes/roles-access/roles-access.component'
 import { DirectoryViewComponent } from './routes/directory/directroy.component'
@@ -83,8 +83,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
     PipeHtmlTagRemovalModule,
     PipeRelativeTimeModule,
     AvatarPhotoModule,
-    // EditorSharedModule,
-    // CkEditorModule,
+    BreadcrumbsOrgModule,
     PipeOrderByModule,
     BtnPageBackModule,
     WidgetResolverModule,
