@@ -31,7 +31,6 @@ import { AboutComponent } from './routes/about/about.component'
 import { RolesAccessComponent } from './routes/roles-access/roles-access.component'
 import { DirectoryViewComponent } from './routes/directory/directroy.component'
 import { CreateMdoComponent } from './routes/create-mdo/create-mdo.component'
-import { UserPopupComponent } from './routes/user-popup/user-popup'
 import { UsersComponent } from './routes/users/users.component'
 import { OpenRolesDialogComponent } from './routes/users/components/open-roles-dialog/open-roles-dialog.component'
 import { EditDepartmentDialogComponent } from './routes/users/components/edit-department-dialog/edit-department-dialog.component'
@@ -46,7 +45,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
     RolesAccessComponent,
     DirectoryViewComponent,
     CreateMdoComponent,
-    UserPopupComponent,
     UsersComponent,
     OpenRolesDialogComponent,
     EditDepartmentDialogComponent,
@@ -91,7 +89,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
     ImageCropModule,
     NgMultiSelectDropDownModule.forRoot(),
   ],
-  entryComponents: [UserPopupComponent, OpenRolesDialogComponent, EditDepartmentDialogComponent],
+  entryComponents: [OpenRolesDialogComponent, EditDepartmentDialogComponent],
   providers: [
     // CKEditorService,
     // LoaderService,

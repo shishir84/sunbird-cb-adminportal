@@ -1,16 +1,9 @@
-<mat-sidenav-container autosize name="discuss-menu">
-  <mat-sidenav [mode]="mode$ | async" [(opened)]="sideNavBarOpened">
-    <div #stickyMenu>
-      <ng-container [wsResolverWidget]="widgetData"></ng-container>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="container-balanced">
-      <mat-card class="checkbox-card" *ngIf="submittedForm">
+
+      <div *ngIf="submittedForm" class="mar-left">
         <h2 class="cb-title">Basic Information</h2>
         <div class="flex-container">
           <div class="flex-container-div">
-            <form [formGroup]="contentForm" (ngSubmit)="onSubmit() && contentForm.valid">
+            <form [formGroup]="contentForm" (ngSubmit)="onSubmit() && contentForm.valid" class="form-width">
               <div class="mobile-break mat-app-background">
                 <div class="margin-top-s">
                   <div class="margin-top-xs">
@@ -20,7 +13,7 @@
                     </p>
                     <mat-form-field appearance="outline" class="margin-top-xs"
                       [ngClass]="{ 'mat-form-field-invalid': showError('name') }">
-                      <input matInput #name formControlName="name" maxlength="500" i18n-placeholder
+                      <input matInput #name formControlName="name" maxlength="100" i18n-placeholder
                         placeholder="Type here" type="text"
                         [required]="checkCondition('name', 'required') ? true : null" pattern="[a-zA-Z ]*" />
                       <mat-error *ngIf="showError('name')" i18n="Name Error|Explains name is required">
@@ -104,7 +97,6 @@
           </div>
 
         </div>
-      </mat-card>
 
       <ng-container class="cb-group-warpper" *ngIf="!submittedForm">
         <mat-card class="checkbox-card">
@@ -118,6 +110,3 @@
           </ws-widget-ui-user-table>
         </mat-card>
       </ng-container>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
