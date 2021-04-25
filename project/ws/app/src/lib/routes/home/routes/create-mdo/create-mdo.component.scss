@@ -121,7 +121,9 @@ input {
   height: 12px;
   font-size: 12px;
 }
-
+.min-width{
+  max-width: 500px;
+}
 .mat-form-field {
   display: flex;
   flex-direction: column;
