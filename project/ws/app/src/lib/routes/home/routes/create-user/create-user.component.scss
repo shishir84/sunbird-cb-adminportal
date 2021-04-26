@@ -17,7 +17,12 @@
 ::ng-deep mat-form-field .mat-form-field-infix .mat-select-value {
   line-height: normal !important;
 }
-
+ws-widget-btn-page-back-admin{
+  margin-left: -270px;
+}
+.max-wid{
+  max-width: 400px;
+}
 ::ng-deep .theme-igot.day-mode .mat-form-field.mat-focused .mat-form-field-label {
   color: #333232 !important;
 }
@@ -161,7 +166,10 @@ input[type=number] {
     border-color: #0074b6;
     color: #fff;
   }
-
+.mar{
+  margin-left: 30px;
+  min-width: 175px;
+}
 
   .radio-toolbar label:hover {
     background: none;

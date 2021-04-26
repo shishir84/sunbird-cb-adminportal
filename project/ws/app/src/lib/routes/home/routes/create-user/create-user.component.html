@@ -1,14 +1,13 @@
 <div class="container-balanced">
-  <div class="left-align">
-    <ws-widget-btn-page-back-admin
-    [widgetData]="{titles:[{title:'Users', url:'/app/home/users'},{title:'Active', url:'none'},{title:'New User',url:'none'}] }">
-  </ws-widget-btn-page-back-admin>
-  </div>
 
 
   <div class="profile-container container-balanced">
     <div class="profile-box">
-      <form class="create-user-form ws-mat-accent-border" [formGroup]="createUserForm">
+
+      <form class="create-user-form ws-mat-accent-border max-wid" [formGroup]="createUserForm">
+        <!-- <ws-widget-btn-page-back-admin
+        [widgetData]="{titles:[{title:'Users', url:'/app/home/users'},{title:'Active', url:'none'},{title:'New User',url:'none'}] }">
+      </ws-widget-btn-page-back-admin> -->
         <div class="input-column px-2">
           <label class="heading">User Details</label>
 
@@ -103,12 +102,20 @@
 
           </div>
         </div>
-        <button mat-raised-button type="submit" (click)="onSubmit(createUserForm)"
-          class="text-white btn-success btn-responsive" [disabled]="createUserForm?.invalid">
+
+
+          <div class="flex flex-1">
+          <button mat-raised-button type="submit" (click)="onSubmit(createUserForm)"
+          class="text-white btn-success" [disabled]="createUserForm?.invalid">
           <span class="text-white" i18n>
             Create User
           </span>
         </button>
+          <button mat-raised-button type="button" [mat-dialog-close]="true" class="flex-auto-display mar" routerLink="/app/home/users">
+            <span class="ws-mat-default-text" i18n>Cancel</span>
+          </button>
+        </div>
+
       </form>
     </div>
   </div>

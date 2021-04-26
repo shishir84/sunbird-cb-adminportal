@@ -76,7 +76,7 @@ export class UsersViewComponent implements OnInit, AfterViewInit, OnDestroy {
       ],
       needCheckBox: false,
       needHash: false,
-      sortColumn: 'fullName',
+      sortColumn: '',
       sortState: 'asc',
       needUserMenus: true,
     }
